@@ -4,7 +4,7 @@ import os
 
 def find_and_get(rootdir: str, file_end: str):
     n = 0
-    for subdir, dirs, files in os.walk(rootdir): #Перебираем все каталоги, подкаталоги, и файлы внутри указанного путиc.
+    for subdir, dirs, files in os.walk(rootdir): #Перебираем все каталоги, подкаталоги, и файлы внутри указанного пути.
         for file in files: #Получив с цикла файлы проверяем все файлы.
             if file.endswith(file_end):
                 #При нахождении файла с нужным расширением программа добавит 1.
@@ -21,7 +21,7 @@ print(find_and_get(rootdir, file_end))
 def find_and_calculate(rootdir: str, file_end: str, operation, end_num: int):
     n = 0
     for subdir, dirs, files in os.walk(rootdir): #Перебираем все каталоги, подкаталоги, и файлы внутри указанного путиc.
-        for file in files: #Получив с цикла файлы проверяем все файлы.
+        for file in files: #Получив с цикла файлы проверяем их.
             if file.endswith(file_end):
                 file_path = os.path.join(subdir, file) #Регистрируем путь до файла.
                 if operation(os.path.getsize(file_path), end_num): #Тут мы сразу получаем вес файла в байтах, и проводим операцию над ним и заданным объёмом.
